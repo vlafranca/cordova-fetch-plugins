@@ -1,0 +1,22 @@
+{
+  "name": "cordova-fetch-plugins",
+  "version": "0.0.2",
+  "description": "Download & install cordova plusgins registered in fetch.json",
+  "repository": "vlafranca/cordova-fetch-plugins",
+  "bin": {
+    "fetch-plugins": "./bin/fetch-plugins.js"
+  },
+  "keywords": [
+    "cordova",
+    "plugins",
+    "fetch",
+    "download"
+  ],
+  "author": "vlafranca",
+  "license": "MIT",
+  "dependencies": {
+    "fs": "0.0.2",
+    "shelljs": "^0.7.4"
+  },
+  "preferGlobal": true
+}
