@@ -10,7 +10,17 @@ try {
 	var plugins = JSON.parse(fetch);
 
 	for (var plugin in plugins) {
-	    var cordovaCmd = "cordova plugin add "+plugins[plugin].source.id;
+	    var name;
+		if(plugins[plugin].source["id"] !== undefined){
+			name = plugins[plugin].source.id;
+		}else if(plugins[plugin].source["url"] !== undefined){
+			name = plugins[plugin].source.url
+			if(plugins[plugin].source.ref){
+				name += "#"+plugins[plugin].source.ref;
+			}
+		}
+
+		var cordovaCmd = "cordova plugin add "+name;
 	    var variables = plugins[plugin].variables;
 	    if(Object.keys(variables).length > 0){
 	        for (var v in variables){
